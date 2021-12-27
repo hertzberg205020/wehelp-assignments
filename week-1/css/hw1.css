@@ -1,0 +1,116 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  width: 100%;
+  font-size: 20px;
+}
+.wrap {
+  display: flex;
+}
+.left {
+  flex: none;
+  font-size: 1em;
+  width: 100px;
+}
+.right {
+  display: flex;
+  flex: auto;
+  justify-content: flex-end;
+}
+.right > img {
+  display: none;
+}
+.text {
+  flex: none;
+  font-size: 1em;
+  width: 50px;
+  margin-right: 5px;
+}
+.container01 {
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #cae6f3;
+}
+.contain {
+  flex: none;
+  width: 380px;
+  padding: 2px;
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+}
+.container02 {
+  max-width: 1200px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  /* background-color: #cae6f3; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+.container02 > .box {
+  flex: none;
+  width: 280px;
+  /* background-color: cornflowerblue; */
+  margin: 10px;
+  text-align: center;
+}
+.box > .title {
+  background-color: #cae6f3;
+  width: 100%;
+  font-size: 1rm;
+  font-weight: bold;
+  margin: auto;
+}
+.picture {
+  display: block; /*remove the space between the img and text*/
+  margin: auto;
+  width: 100%;
+  object-fit: cover; /*固定圖形比例*/
+}
+@media (max-width: 1200px) {
+  .container02 > .box {
+    /* margin: 10px; */
+    width: 45%;
+  }
+}
+@media (max-width: 600px) {
+  .right > .text {
+    display: none;
+  }
+  .right > img {
+    flex: none;
+    width: 24px;
+    display: block; /*顯示漢堡圖式*/
+  }
+  .container02 > .box {
+    /* margin: 5px; */
+    width: 90%;
+  }
+}
+@media (max-width: 380px) {
+  .right > .text {
+    display: none;
+  }
+  .right > img {
+    flex: none;
+    width: 24px;
+    display: block;
+  }
+  .container02 > .box {
+    /* margin: 5px; */
+    width: 90%;
+  }
+  .contain {
+    width: 100%;
+    font-size: 1.8em;
+  }
+}
