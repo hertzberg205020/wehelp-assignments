@@ -16,16 +16,16 @@ body {
   position: fixed;
   top: 0px;
   width: 100%;
-  height: 100px;
 }
 .wrap {
+  padding: 3px;
   background-color: white;
   display: flex;
 }
 .left {
   flex: none;
   font-size: 1em;
-  width: 100px;
+  max-width: 100%;
 }
 .right {
   display: flex;
@@ -37,15 +37,16 @@ body {
 }
 .text {
   flex: none;
+  /* padding: 0px; */
   font-size: 1em;
-  width: 50px;
-  margin-right: 5px;
+  max-width: 100%;
+  margin-right: 8px;
 }
 nav {
   width: 100px;
   background-color: darkgrey;
   position: absolute;
-  top: 25px;
+  top: 28px;
   right: -100px;
 }
 nav a {
@@ -143,6 +144,7 @@ nav a {
     /* margin: 5px; */
     width: 90%;
   }
+
   .contain {
     width: 100%;
     font-size: 1.5em;
