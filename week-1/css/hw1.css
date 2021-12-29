@@ -68,7 +68,8 @@ nav a {
 }
 .contain {
   flex: none;
-  width: 380px;
+  /* width: 380px; */
+  max-width: 100%;
   padding: 2px;
   font-weight: bold;
   font-size: 2em;
