@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function calculate(min, max) {
+            let sum = 0;
+            for(let i = min; i <= max; i++) {
+                sum += i;
+            }
+            return sum;
+        }
+
+
+        var data = {
+            "count": 3,
+            "employee": [
+                {
+                    "name": "John",
+                    "salary": 30000
+                },
+                {
+                    "name": "Bob",
+                    "salary": 60000
+                },
+                {
+                    "name": "John",
+                    "salary": 50000
+                }
+            ]
+
+        }
+
+
+        function avg(data) {
+            let employees_lst = data.employee;
+            let count = data.count;
+            let total = 0;
+            for (let i = 0; i < employees_lst.length; i++) {
+                total += employees_lst[i].salary;
+            }
+            return (total/count);
+        }
+
+
+        function _merge(nums, start, mid, end, temp) {
+            for(let i = start; i <= end; i++) {
+                temp[i] = nums[i];
+            }
+            let i = start;
+            let j = mid + 1;
+            for (let k = start; k <= end; k++) {
+                if (i > mid) {
+                    nums[k] = temp[j];
+                    j++;
+                } else if (j > end) {
+                    nums[k] = temp[i];
+                    i++;
+                } else if (temp[i] <= temp[j]) {
+                    nums[k] = temp[i];
+                    i++;
+                } else {
+                    nums[k] = temp[j];
+                    j++;
+                }
+            }
+        }
+
+
+        function _mergeSort(nums, start, end, temp) {
+            if (start >= end) {
+                return;
+            }
+            let mid = start + ~~((end-start)/2);
+            _mergeSort(nums, start, mid, temp);
+            _mergeSort(nums, mid+1, end, temp);
+            if (nums[mid] > nums[mid+1]) {
+                _merge(nums, start, mid, end, temp);
+            }
+        }
+
+        function mergeSort(nums) {
+            let temp = Array.from(nums);
+            _mergeSort(nums, 0, nums.length-1, temp);
+        }
+
+
+        function maxProduct(nums) {
+            mergeSort(nums)
+            candidate1 = nums[0] * nums[1];
+            candidate2 = nums[nums.length-1] * nums[nums.length-2]
+            return candidate1 > candidate2 ? candidate1 : candidate2;
+        }
+
+
+        function twoSum(nums, target) {
+            obj_map = new Map();
+            for (let i = 0; i < nums.length; i++) {
+                diff = target - nums[i];
+                if (obj_map.has(nums[i])) {
+                    return [obj_map.get(nums[i]), i];
+                    // return [obj_map.get(nums[i]), i];
+                } else {
+                    obj_map.set(diff, i);
+                }
+            }
+        }
+
+
+        function maxZeros(nums) {
+            cur_len = 0;
+            max_len = 0;
+            for (let i = 0; i < nums.length; i++) {
+                if (nums[i] == 0) {
+                    cur_len++;
+                }
+                if (nums[i] == 1) {
+                    if (cur_len > max_len) {
+                        max_len = cur_len;
+                    }
+                    cur_len = 0;
+                }
+            }
+            return max_len > cur_len ? max_len : cur_len;
+        }
+
+
+        function main() {
+            console.log(calculate(1, 3));
+            console.log(calculate(4, 8));
+            console.log(avg(data));
+            console.log(maxProduct([10, -2, 0, 3]))
+            console.log(maxProduct([5, 20, 2, 6]))
+            console.log(maxProduct([-1, 2]))
+            console.log(maxProduct([-1, 0, 2]))
+            console.log(maxProduct([-1, -2, 0]))
+            console.log(twoSum([2, 11, 7, 15], 9))
+            console.log(maxZeros([0, 1, 0, 0]))
+            console.log(maxZeros([1, 0, 0, 0, 0, 1, 0, 1, 0, 0]))
+            console.log(maxZeros([1, 1, 1, 1, 1]))
+            console.log(maxZeros([0, 0, 0, 1, 1]))
+        }
+        main()
+    </script>
+</head>
+<body>
+
+</body>
+</html>
