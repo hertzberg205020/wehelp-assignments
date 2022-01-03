@@ -84,7 +84,7 @@ nav a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  text-align: center;
+  /* text-align: center; */
 }
 .container02 > .box {
   flex: none;
@@ -95,17 +95,20 @@ nav a {
 }
 .box > .title {
   background-color: #cae6f3;
-  width: 100%;
-  font-size: 1rm;
+  font-size: 1rem;
   font-weight: bold;
   margin: auto;
 }
 .picture {
-  /* display: block; */
-  vertical-align: top; /*remove the space between the img and text*/
+  display: block;
+  /* vertical-align: top;  */
+  /*remove the space between the img and text*/
   margin: auto;
-  width: 100%;
-  object-fit: cover; /*固定圖形比例*/
+  max-width: 100%;
+  /* overflow: hidden; */
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  /*固定圖形比例*/
 }
 
 @media (max-width: 1200px) {
