@@ -2,9 +2,11 @@
   margin: 0px;
   padding: 0px;
 }
+html {
+  font-size: 20px;
+}
 body {
   width: 100%;
-  font-size: 20px;
 }
 #menu_ctrl {
   position: absolute;
@@ -93,10 +95,13 @@ nav a {
   /* background-color: cornflowerblue; */
   margin: 10px;
   text-align: center;
+  overflow: hidden;
 }
 .box > .title {
   background-color: #cae6f3;
   font-size: 1rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-weight: bold;
   margin: auto;
 }
@@ -107,7 +112,7 @@ nav a {
   margin: auto;
   width: 100%;
   /* overflow: hidden; */
-  aspect-ratio: 16/9;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   /*固定圖形比例*/
 }
