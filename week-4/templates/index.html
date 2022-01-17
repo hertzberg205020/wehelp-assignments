@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>homepage</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      .head{
+        background-color: #003344;
+        color: white;
+        font-weight: bold;
+        font-size: 30px;
+        font-family: "微軟正黑體";
+        text-align: center;
+        padding: 10px;
+      }
+      form{
+          width: 960px;
+          margin: 50px auto;
+          text-align: center;
+      }
+      h2{
+          margin: 15px;
+      }
+      button{
+          margin-top: 20px;
+          padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+  <div class="head">
+      歡迎光臨，請輸入帳號密碼
+  </div>
+  <form action="/signin" method="post">
+      <h2>登入系統</h2>
+      帳號: <input type="text" name="account">
+      <br/>
+      密碼: <input type="text" name="password">
+      <br/>
+      <button>登入</button>
+  </form>
+  </body>
+</html>
