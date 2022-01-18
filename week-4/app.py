@@ -21,10 +21,14 @@ def hello_world():
 def sign_in():
     account = request.form["account"]
     password = request.form["password"]
+
     if account == "test" and password == "test":
         session['account'] = account
         session['password'] = password
         return redirect("/member/")
+
+    if account == "" or password == "":
+        return redirect("/error/?message=請輸入帳號, 密碼")
 
     return redirect("/error/?message=帳號或密碼輸入錯誤")
 
