@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS member(
 );
 ```
 
-![2-2.jpg](./Figs/2-2.jpg)
+![2-2.JPG](./Figs/2-2.JPG)
 
 
 
@@ -43,9 +43,9 @@ VALUES
 ('name5', 'account5', 'pwd5');
 ```
 
-![3-1.jpg](./Figs/3-1.jpg)
+![3-1.JPG](./Figs/3-1.JPG)
 
-![3-2.jpg](./Figs/3-2.jpg)
+![3-2.JPG](./Figs/3-2.JPG)
 
 使用 SELECT 指令取得所有在 member 資料表中的會員資料。
 
@@ -53,7 +53,7 @@ VALUES
 SELECT * FROM member;
 ```
 
-![3-2.jpg](./Figs/3-2.jpg)
+![3-2.JPG](./Figs/3-2.JPG)
 
 使用 SELECT 指令取得所有在 member 資料表中的會員資料，並按照 time 欄位，由近到遠排。
 
@@ -63,7 +63,7 @@ FROM member
 ORDER BY `time` DESC;
 ```
 
-![3-3.jpg](./Figs/3-3.jpg)
+![3-3.JPG](./Figs/3-3.JPG)
 
 使用 SELECT 指令取得 member 資料表中第 2 ~ 4 共三筆資料，並按照 time 欄位，由近到遠排序。
 
@@ -74,7 +74,7 @@ ORDER BY `time` DESC
 LIMIT 1, 3;
 ```
 
-![3-4.jpg](./Figs/3-4.jpg)
+![3-4.JPG](./Figs/3-4.JPG)
 
 使用 SELECT 指令取得欄位 username 是 test 的會員資料。
 
@@ -84,7 +84,7 @@ FROM member
 WHERE username = 'test';
 ```
 
-![3-5.jpg](./Figs/3-5.jpg)
+![3-5.JPG](./Figs/3-5.JPG)
 
 使用 SELECT 指令取得欄位 username 是 test、且欄位 password 也是 test 的資料。
 
@@ -95,7 +95,7 @@ WHERE username = 'test'
 AND `password` = 'test';
 ```
 
-![3-5.jpg](./Figs/3-5.jpg)
+![3-5.JPG](./Figs/3-5.JPG)
 
 使用 UPDATE 指令更新欄位 username 是 test 的會員資料，將資料中的 name 欄位改成 test2。
 
@@ -105,7 +105,7 @@ SET `name` = 'test2'
 WHERE username = 'test';
 ```
 
-![3-6.jpg](./Figs/3-6.jpg)
+![3-6.JPG](./Figs/3-6.JPG)
 
 ## 要求四：SQL Aggregate Functions
 
@@ -116,7 +116,7 @@ SELECT COUNT(id)
 FROM member;
 ```
 
-![4-1.jpg](./Figs/4-1.jpg)
+![4-1.JPG](./Figs/4-1.JPG)
 
 取得 member 資料表中，所有會員 follower_count 欄位的總和
 
@@ -125,7 +125,7 @@ SELECT SUM(follower_count)
 FROM member;
 ```
 
-![4-2.jpg](./Figs/4-2.jpg)
+![4-2.JPG](./Figs/4-2.JPG)
 
 取得 member 資料表中，所有會員 follower_count 欄位的平均數
 
@@ -134,7 +134,7 @@ SELECT AVG(follower_count)
 FROM member;
 ```
 
-![4-3.jpg](./Figs/4-3.jpg)
+![4-3.JPG](./Figs/4-3.JPG)
 
 ## 要求五：SQL JOIN
 
@@ -157,7 +157,7 @@ VALUES
 (5, 'name5 comment');
 ```
 
-![5-1.jpg](./Figs/5-1.jpg)
+![5-1.JPG](./Figs/5-1.JPG)
 
 使用 SELECT 搭配 JOIN 語法，取得所有留言，結果須包含留言者會員的姓名
 
@@ -167,7 +167,7 @@ FROM message msg JOIN member m
 ON msg.`member_id` = m.`id`;
 ```
 
-![5-2.jpg](./Figs/5-2.jpg)
+![5-2.JPG](./Figs/5-2.JPG)
 
 使用 SELECT 搭配 JOIN 語法，取得 member 資料表中欄位 username 是 test 的所有留言，資料中須包含留言者會員的姓名。
 
@@ -178,4 +178,4 @@ ON msg.`member_id` = m.`id`
 WHERE m.`username` = 'test';
 ```
 
-![5-3.jpg](./Figs/5-3.jpg)
+![5-3.JPG](./Figs/5-3.JPG)
