@@ -81,18 +81,19 @@ class MemberDao:
                 sql = """
                 CREATE TABLE IF NOT EXISTS member(
                     id BIGINT PRIMARY KEY AUTO_INCREMENT,
-                    `name` VARCHAR(255),
-                    userName VARCHAR(255) UNIQUE,
-                    `password` VARCHAR(255) 
+                    `name` VARCHAR(255) NOT NULL,
+                    username VARCHAR(255) NOT NULL,
+                    `password` VARCHAR(255) NOT NULL,
+                    follower_count INT NOT NULL DEFAULT 0,
+                    `time` DATETIME NOT NULL DEFAULT NOW()
                 )
                 """
                 self.__util.create_cursor()
                 self.__util.cursor.execute(sql)
                 self.__util.conn.commit()
+                self.insert(member)
             except Error as e:
                 print(e)
-            finally:
-                self.insert(member)
         finally:
             self.__util.disconnect()
 

@@ -1,4 +1,4 @@
-import json
+import hashlib
 
 from flask import Flask, url_for
 from flask import render_template
@@ -13,7 +13,7 @@ app = Flask(__name__,
             static_folder="static",
             static_url_path="/static")
 
-app.secret_key = "myPassWordIsWeak@109"
+app.secret_key = hashlib.sha256(b"123456").hexdigest()
 memberDao = MemberDao()
 
 
