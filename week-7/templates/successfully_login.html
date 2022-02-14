@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>成功登入</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+      .head{
+        background-color: #003344;
+        color: white;
+        font-weight: bold;
+        font-size: 30px;
+        font-family: "微軟正黑體";
+        text-align: center;
+        padding: 10px;
+      }
+      .content{
+          width: 960px;
+          font-size: 22px;
+          font-family: "微軟正黑體";
+          text-align: center;
+          padding: 10px;
+          margin: 50px auto;
+      }
+      .text{
+          margin-bottom: 10px;
+      }
+      input[type=text] {
+          width: 175px;
+          height: 25px;
+      }
+      button {
+          height: 25px;
+          padding: 2px;
+      }
+      h3{
+          margin-bottom: 5px;
+      }
+      .append_data{
+          margin-top: 10px;
+      }
+    </style>
+    <script src="/static/js/successfully_login.js"></script>
+</head>
+<body>
+    <div class="head">
+      歡迎光臨，這是會員頁
+  </div>
+    <div class="content">
+        <div class="text">{{ info }}，歡迎登入系統</div>
+        <a href="/signout/">登出系統</a>
+    </div>
+    <div class="content">
+        <h3>查詢會員姓名</h3>
+        <input type="text" placeholder="請輸入要查詢者的username" id="query_userName">
+        <button id="query_member_btn">查詢</button>
+        <div id="wrapper_member_info"></div>
+    </div>
+    <div class="content">
+        <h3>更新我的姓名</h3>
+        <input type="text" placeholder="請輸入要更新的名字" id="new_name">
+        <button id="rename_btn">更新</button>
+        <div id="wrapper_rename_stat"></div>
+    </div>
+</body>
+</html>
