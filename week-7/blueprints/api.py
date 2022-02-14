@@ -1,6 +1,7 @@
 from flask import Blueprint, request, session
 
 from dao.member_dao import MemberDao
+from decorators import login_required
 from entity.member import Member
 
 bp = Blueprint("api", __name__, url_prefix="/api")
@@ -25,6 +26,7 @@ def query_user():
 
 
 @bp.route('/member', methods=['POST'])
+@login_required
 def rename():
     ret = {
             "error": True
