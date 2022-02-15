@@ -30,7 +30,7 @@ def rename():
             "error": True
         }
 
-    if session.get('userName', ''):
+    if not session.get('userName', ''):
         return ret
 
     new_name = request.json.get('name', None)
